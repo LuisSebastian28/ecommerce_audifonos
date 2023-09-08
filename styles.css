@@ -1,0 +1,422 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    width: 100%;
+    background-color: black;
+    height: 100px; /* Altura cambiada a 100px */
+    display: flex;
+    justify-content: space-between; /* Espacio equitativo entre los elementos */
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white; /* Cambio de color de las letras a blanco por defecto */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones para el cambio de color */
+}
+
+.navbar:hover {
+    background-color: white;
+    color: black; /* Cambio de color de las letras a negro al pasar el cursor */
+}
+
+/* Cambio de color de todas las letras y los iconos a negro al pasar el cursor */
+.navbar:hover a,
+.navbar:hover .search-icon i,
+.navbar:hover .cart-icon i {
+    color: black;
+}
+
+/* Estilos para el logo y los iconos de búsqueda y carrito en la izquierda */
+.nav-left {
+    display: flex;
+    align-items: center;
+    color: white; /* Cambio de color del logo a blanco */
+}
+
+.logo img {
+    width: 100px; /* Ajusta el tamaño del logo según tu necesidad */
+    margin-right: 20px; /* Espacio entre el logo y los iconos */
+}
+
+/* Estilos para el botón de hamburguesa en el div de la derecha */
+.menu-toggle {
+    font-size: 20px;
+    margin-left: 20px; /* Espacio entre el botón de hamburguesa y los iconos */
+    cursor: pointer;
+    display: none; /* Oculta el botón de hamburguesa por defecto en pantallas más grandes */
+}
+
+/* Añade el color negro al botón de hamburguesa en hover */
+.menu-toggle:hover {
+    color: black;
+}
+
+/* Estilos para los iconos de búsqueda y carrito en el div de la derecha */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon,
+.cart-icon {
+    font-size: 20px;
+    margin-left: 20px; /* Espacio entre los iconos y la pared derecha */
+    margin-right: 20px; /* Espacio entre los iconos y la pared derecha */
+    cursor: pointer;
+}
+
+/* Añade el color negro al icono en hover */
+.search-icon:hover,
+.cart-icon:hover {
+    color: black;
+}
+
+/* Estilos para las opciones de navegación en el div central */
+.nav-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-center ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-center ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white; /* Cambio de color de las letras a blanco */
+    transition: color 0.3s;
+}
+
+.nav-center ul li a:hover {
+    color: black; /* Cambio de color de las letras a negro al pasar el cursor */
+}
+
+/* Estilos para el menú desplegable en pantallas más pequeñas */
+.mobile-nav {
+    display: none; /* Oculta el menú desplegable por defecto en pantallas más grandes */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav ul li {
+    margin-bottom: 10px;
+}
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black; /* Cambio de color de las letras a negro en el menú desplegable */
+}
+
+
+
+/* Estilos para la Sección de Categorías */
+.categories-section {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.categories-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.shop-link {
+    text-decoration: none;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.shop-link:hover {
+    background-color: #333; /* Cambia el color al pasar el cursor */
+}
+
+.category-cards {
+    display: flex;
+    justify-content: space-between; /* Espacio entre las tarjetas */
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+}
+
+.category-card {
+    flex: 0 0 calc(33.33% - 30px); /* Tamaño equitativo con margen entre las tarjetas */
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden; /* Para que las imágenes no desborden las tarjetas */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px; /* Espacio entre las tarjetas */
+}
+
+.category-card-image {
+    flex-grow: 1; /* Hace que la imagen ocupe el espacio disponible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Para que la imagen ocupe los bordes de la tarjeta */
+}
+
+.category-card-image img {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: 100%; /* Ocupa todo el alto de la tarjeta */
+    object-fit: cover; /* Mantiene la proporción y ajusta la imagen dentro de la tarjeta */
+}
+
+.category-card-content h3 {
+    font-size: 18px;
+    margin: 10px 0; /* Espacio entre el título y la imagen */
+}
+
+/* Efecto de levitación y sombra al pasar el cursor */
+.category-card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra */
+}
+
+/* Estilos para los enlaces */
+.category-card a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: black; /* Color de texto negro */
+    transition: color 0.3s;
+}
+
+.category-card a:hover {
+    color: #333; /* Cambia el color al pasar el cursor */
+    text-decoration: none; /* Asegura que no haya subrayado en el enlace al pasar el cursor */
+}
+
+
+/* Estilos para la Sección con Fondo */
+.background-section {
+    background-image: url('homepage-bg-esports.webp'); /* Ruta de tu imagen de fondo */
+    background-size: auto 100%; /* Ancho automático y altura al 100% */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+    padding: 100px 0; /* Espaciado interior */
+    color: white; /* Color de texto */
+    text-align: center; /* Centra el contenido */
+}
+
+.background-content {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+.background-text {
+    flex: 1;
+    padding: 70px; /* Agrega 20px de padding a este div */
+}
+
+.background-text p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.background-image {
+    flex: 1;
+    padding: 20px; /* Agrega 20px de padding a este div */
+}
+
+/* Estilos para hacer la sección responsive */
+@media screen and (max-width: 768px) {
+    .background-section {
+        padding: 50px 0; /* Ajusta el espaciado interior en pantallas más pequeñas */
+    }
+
+    .background-content {
+        flex-direction: column; /* Cambia la dirección de flexión para apilar elementos en pantallas pequeñas */
+    }
+
+    .background-text, .background-image {
+        flex: none; /* Evita que los divs ocupen todo el espacio disponible */
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        text-align: center; /* Centra el contenido */
+        padding: 20px; /* Agrega espacio alrededor del contenido en pantallas pequeñas */
+    }
+}
+
+/* Estilos para el título fuera de la sección */
+.why-choose-us-title {
+    background-color: white; /* Fondo blanco para el título */
+    font-size: 36px; /* Tamaño de fuente aumentado */
+    padding: 0 0; /* Espaciado interior */
+    text-align: center; /* Centra el título */
+}
+
+.why-choose-us-section {
+    background-color: #e7e7e7; /* Color de fondo gris medio */
+    padding: 50px 0; /* Espaciado interior reducido */
+    text-align: center; /* Centra el contenido */
+}
+
+
+.why-choose-us-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content {
+    flex: 1;
+    max-width: 50%; /* Máximo del 50% del ancho de la sección */
+}
+
+.left-content img {
+    max-width: 100%;
+    height: auto;
+    min-width: 100%; /* Ancho mínimo del 100% */
+}
+
+.right-content {
+    flex: 1;
+    max-width: 50%; /* Máximo del 50% del ancho de la sección */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding-left: 90px;
+}
+
+/* Estilos para la Sección "Por qué Elegirnos" */
+.why-choose-us-section {
+    background-color: #ffffff; /* Fondo blanco para toda la sección excepto el texto */
+    padding: 50px 0; /* Espaciado interior reducido */
+    text-align: center; /* Centra el contenido */
+}
+
+.why-choose-us-content {
+    background-color: #b1b1b1; /* Fondo gris (#b1b1b1) para la clase why-choose-us-content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content {
+    flex: 1;
+    max-width: 50%; /* Máximo del 50% del ancho de la sección */
+}
+
+.left-content img {
+    max-width: 100%;
+    height: auto;
+    min-width: 100%; /* Ancho mínimo del 100% */
+}
+
+.right-content {
+    flex: 1;
+    max-width: 50%; /* Máximo del 50% del ancho de la sección */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding-left: 90px;
+    padding-right: 90px;
+    background-color: #b1b1b1; /* Fondo gris (#b1b1b1) para el div de la derecha */
+    color: black; /* Texto negro para el div de la derecha */
+}
+
+/* Estilos para el título dentro de la sección "Por qué Elegirnos" */
+.why-choose-us-section h2 {
+    font-size: 36px; /* Tamaño de fuente aumentado */
+    text-align: center; /* Centra el título */
+}
+
+.choose-us-item {
+    margin-bottom: 30px; /* Espacio entre cada elemento */
+}
+
+.choose-us-item h3 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: red; /* Color de texto rojo para los títulos */
+}
+
+.choose-us-item p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Estilos para hacer la sección responsive */
+@media screen and (max-width: 768px) {
+    .why-choose-us-content {
+        flex-direction: column; /* Cambia la dirección de flexión en pantallas pequeñas */
+    }
+
+    .left-content,
+    .right-content {
+        flex: none; /* Evita que los divs ocupen todo el espacio disponible */
+        max-width: 100%; /* Ancho máximo del 100% en pantallas pequeñas */
+        padding: 20px; /* Ajusta el padding en pantallas pequeñas */
+    }
+}
+
+
+/* Estilos para la Sección de Redes Sociales */
+.social-section {
+    background-color: #f7f7f7; /* Color de fondo */
+    padding: 50px 0; /* Espaciado interior */
+    text-align: center; /* Centra el contenido */
+    margin-top: -50px; /* Ajusta este valor según sea necesario */
+
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 36px; /* Tamaño de fuente más grande */
+    margin: 0 15px; /* Espaciado entre los íconos */
+    width: 60px; /* Ancho de los íconos */
+    height: 60px; /* Altura de los íconos */
+    border-radius: 50%; /* Borde redondeado para los íconos */
+    background-color: #fff; /* Fondo blanco para los íconos */
+    color: #333; /* Color del ícono */
+    text-align: center;
+    line-height: 60px; /* Alineación vertical central del ícono */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Transición de colores y transformación */
+}
+
+.social-icon:hover {
+    background-color: #333; /* Cambio de fondo al pasar el cursor */
+    color: #fff; /* Cambio de color del ícono al pasar el cursor */
+    transform: scale(1.1); /* Efecto de resaltado al pasar el cursor */
+}
+
+
+/* Estilos para el Footer */
+.footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto en el footer */
+    padding: 20px 0; /* Espaciado interior */
+}
+
+#footer-container {
+    max-width: 1200px; /* Ancho máximo solo para este contenedor */
+    margin: 0 auto; /* Centra el contenido horizontalmente solo para este contenedor */
+    text-align: center; /* Centra el texto solo para este contenedor */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Espaciado superior */
+    font-size: 14px; /* Tamaño de fuente del texto de derechos de autor */
+}
+
+

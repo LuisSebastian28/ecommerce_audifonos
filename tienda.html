@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Tienda de Audífonos</title>
+    <link rel="stylesheet" href="tiendastyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="pngegg.png" alt="Logo de la Empresa">
+            </div>
+        </div>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="index.html#">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="https://wa.me/59163905128" target="_blank">Contáctanos por WhatsApp</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="search-icon"><i class="fas fa-search"></i></div>
+            <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
+        </div>
+    </nav>
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <div class="sticky-container">
+        <div class="category-filters">
+            <h3>Filtrar por Categoría:</h3>
+            <ul>
+                <li><a href="#" data-category="all">Todos</a></li>
+                <li><a href="#" data-category="gamer">Gamer</a></li>
+                <li><a href="#" data-category="deportes">Deportes</a></li>
+                <li><a href="#" data-category="profesional">Profesional</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="product-list">
+    <div class="container">
+        <div class="product-row">
+            <!-- Producto 1 -->
+            <div class="product-card" data-category="gamer">
+                <img src="producto1.png" alt="Producto 1">
+                <h3>Producto 1</h3>
+                <p>Descripción del Producto 1.</p>
+                <p>Precio: $100</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Producto 2 -->
+            <div class="product-card" data-category="deportes">
+                <img src="producto2.webp" alt="Producto 2">
+                <h3>Producto 2</h3>
+                <p>Descripción del Producto 2.</p>
+                <p>Precio: $120</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Producto 3 -->
+            <div class="product-card" data-category="profesional">
+                <img src="producto3.png" alt="Producto 3">
+                <h3>Producto 3</h3>
+                <p>Descripción del Producto 3.</p>
+                <p>Precio: $90</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Producto 4 -->
+            <div class="product-card" data-category="gamer">
+                <img src="producto4.png" alt="Producto 4">
+                <h3>Producto 4</h3>
+                <p>Descripción del Producto 4.</p>
+                <p>Precio: $110</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-category="deportes">
+                <img src="producto4.png" alt="Producto 5">
+                <h3>Producto 5</h3>
+                <p>Descripción del Producto 5.</p>
+                <p>Precio: $110</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+
+            <div class="product-card" data-category="profesional">
+                <img src="producto4.png" alt="Producto 6">
+                <h3>Producto 6</h3>
+                <p>Descripción del Producto 6.</p>
+                <p>Precio: $110</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            <div class="product-card" data-category="gamer">
+                <img src="producto4.png" alt="Producto 7">
+                <h3>Producto 7</h3>
+                <p>Descripción del Producto 7.</p>
+                <p>Precio: $110</p>
+                <button class="buy-button">Comprar</button>
+                <button class="add-to-cart-button">Agregar al Carrito</button>
+            </div>
+            
+        </div>
+
+        <!-- Repite la estructura para más filas de productos -->
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Filtrar productos al hacer clic en un enlace de categoría
+        $(".category-filters a").on("click", function (e) {
+            e.preventDefault();
+            var category = $(this).data("category");
+            
+            // Mostrar todos los productos si se hace clic en "Todos"
+            if (category === "all") {
+                $(".product-card").show();
+            } else {
+                // Ocultar todos los productos y mostrar solo los de la categoría seleccionada
+                $(".product-card").hide();
+                $(".product-card[data-category='" + category + "']").show();
+            }
+        });
+    });
+</script>
+
+<script>
+    // Obtén el valor del parámetro "categoria" de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoria = urlParams.get('categoria');
+
+    // Filtra los productos según la categoría y muestra solo los que coinciden
+    const productCards = document.querySelectorAll('.product-card'); // Ajusta el selector según tu estructura
+    productCards.forEach(card => {
+        const cardCategoria = card.getAttribute('data-category'); // Ajusta el atributo según tu estructura
+        if (categoria === cardCategoria || categoria === "all" || categoria === null) {
+            card.style.display = 'block'; // Muestra los productos que coinciden con la categoría o todos si no hay filtro
+        } else {
+            card.style.display = 'none'; // Oculta los productos que no coinciden
+        }
+    });
+</script>
+
+<footer class="footer">
+    <div id="footer-container">
+        <div class="footer-bottom">
+            <p>&copy; 2023 Tu Empresa - Todos los derechos reservados</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
